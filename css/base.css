@@ -25,6 +25,13 @@ a::before,
 a::after {
   text-decoration: none; }
 
+a:focus {
+  color: inherit; }
+
+img {
+  max-width: 100%;
+  height: auto; }
+
 /* Headings
 -------------------------------------------------------------- */
 h5 {
@@ -270,20 +277,20 @@ h4 {
   .events-calendar-form .date-submit input:first-child {
     margin-left: 0; }
 
-.clearfix:after, .events-calendar-form .date-input:after, .events-calendar-form .date-submit:after, .wrapper:after, .social-share ul:after, .weather:after, .content:after, #header #header-wrapper:after {
+.clearfix:after, .events-calendar-form .date-input:after, .events-calendar-form .date-submit:after, .wrapper:after, .social-share ul:after, .weather:after, .block-local-tasks-block nav.tabs ul:after, .region:after, .layout-container:after, .layout-container .block-search form:after, .layout-container header:after, .layout-container main:after, .layout-container footer:after {
   content: "";
   clear: both;
   display: table; }
 
 .wrapper {
-  max-width: 1330px;
+  max-width: 992px;
   margin: 0 auto; }
 
 .wrapper-small {
   max-width: 900px;
   margin: 0 auto; }
 
-.transition, .secondary-button:hover, form.email input[type='submit']:hover, .social-share ul li a:hover, .ui-datepicker .ui-datepicker-header a.ui-corner-all:hover, .ui-datepicker .ui-datepicker-header a.ui-corner-all:hover:after, .content #branding-wrapper .site-name a, #menu #nav .menu a {
+.transition, .secondary-button:hover, form.email input[type='submit']:hover, .social-share ul li a:hover, .ui-datepicker .ui-datepicker-header a.ui-corner-all:hover, .ui-datepicker .ui-datepicker-header a.ui-corner-all:hover:after, .block-local-tasks-block nav.tabs ul li, .layout-container .block-system-branding-block .site-name a, .layout-container nav.navigation ul.menu li a, #menu #nav .menu a {
   transition: all .2s ease 0s; }
 
 .play-button:before, .weather .views .cams .item .camera a:before {
@@ -759,26 +766,48 @@ form.email input[type='submit'] {
 /* Body
 -------------------------------------------------------------- */
 body {
-  background: url(../images/body-bg.png) repeat-x #fff;
-  font-size: 80%;
+  background: #9C9C9C;
+  font-size: 100%;
   font-family: Arial, Helvetica, sans-serif;
-  color: #000;
   margin: 0;
   padding: 0;
+  color: #000;
   line-height: 1.5em; }
 
-.links ul li a {
-  color: #000 !important; }
+/* Admin regions
+-------------------------------------------------------------- */
+.block-local-tasks-block nav.tabs ul {
+  margin-bottom: 10px; }
+  .block-local-tasks-block nav.tabs ul li {
+    float: left;
+    margin-right: 10px; }
+    .block-local-tasks-block nav.tabs ul li a {
+      font-family: "gotham-book", sans-serif;
+      background: #fff;
+      padding: 5px;
+      margin: 0; }
+      .block-local-tasks-block nav.tabs ul li a:hover {
+        background: #9C9C9C;
+        color: #fff; }
+      .block-local-tasks-block nav.tabs ul li a.is-active {
+        background: #393A3F;
+        color: #fff; }
+.block-local-tasks-block nav.breadcrumb a {
+  font-family: "gotham-book", sans-serif; }
 
 /* Content regions
 -------------------------------------------------------------- */
-#wrapper {
-  width: 950px;
-  margin: 15px auto 0; }
+.region .profile {
+  display: none; }
 
-#content {
+.block-system-powered-by-block {
+  display: inline-block;
+  text-align: center;
   width: 100%;
-  float: left; }
+  margin: 10px 0 0 0;
+  font-size: 12px; }
+  .block-system-powered-by-block a {
+    color: #9C9C9C; }
 
 /* Text elements
 -------------------------------------------------------------- */
@@ -807,159 +836,190 @@ code, tt, pre {
   font-size: 0.9em;
   line-height: 1.2em; }
 
+/* Content regions
+-------------------------------------------------------------- */
+.layout-container {
+  max-width: 992px;
+  margin: 0 auto;
+  padding: 20px;
+  background: url("../images/body-bg.png") repeat-x #fff; }
+  .layout-container .block-system-branding-block {
+    float: left; }
+    .layout-container .block-system-branding-block .site-logo {
+      display: inline-block;
+      vertical-align: top; }
+      .layout-container .block-system-branding-block .site-logo img {
+        max-width: 50px;
+        height: auto;
+        display: block; }
+    .layout-container .block-system-branding-block .site-name {
+      display: inline-block;
+      position: relative;
+      margin: 15px 0 0 0;
+      color: #fff;
+      text-decoration: none;
+      font-family: "gotham-light", sans-serif;
+      font-size: 40px;
+      line-height: 44px;
+      letter-spacing: 2px; }
+      .layout-container .block-system-branding-block .site-name a:focus, .layout-container .block-system-branding-block .site-name a:link, .layout-container .block-system-branding-block .site-name a:visited {
+        color: inherit; }
+      .layout-container .block-system-branding-block .site-name a:hover {
+        color: #9C9C9C; }
+  .layout-container .block-search {
+    float: right;
+    margin: 15px 0 0 0; }
+  .layout-container nav.navigation {
+    display: inline-block;
+    width: 100%;
+    margin: 30px 0; }
+    .layout-container nav.navigation ul.menu {
+      display: table;
+      width: 100%;
+      background: -webkit-linear-gradient(#c4c4c4, gray);
+      background: -o-linear-gradient(#c4c4c4, gray);
+      background: -moz-linear-gradient(#c4c4c4, gray);
+      background: linear-gradient(#c4c4c4, gray);
+      -webkit-box-shadow: 1px 2px 3px -1px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 1px 2px 3px -1px rgba(0, 0, 0, 0.75);
+      box-shadow: 1px 2px 3px -1px rgba(0, 0, 0, 0.75); }
+      .layout-container nav.navigation ul.menu li {
+        display: table-cell;
+        text-align: center;
+        padding: 0; }
+        .layout-container nav.navigation ul.menu li a {
+          font-family: "gotham-bold", sans-serif;
+          color: #fff;
+          text-transform: uppercase;
+          padding: 15px 0;
+          display: block; }
+          .layout-container nav.navigation ul.menu li a:hover {
+            color: gray;
+            background: white; }
+          .layout-container nav.navigation ul.menu li a.is-active, .layout-container nav.navigation ul.menu li a a:hover {
+            color: gray;
+            background: white; }
+  .layout-container main a {
+    color: #9C9C9C; }
+  .layout-container footer nav.navigation.menu--footer {
+    margin-top: 10px;
+    margin-bottom: 0; }
+    .layout-container footer nav.navigation.menu--footer ul.menu li a {
+      font-family: "gotham-book", sans-serif;
+      font-size: 12px;
+      padding: 5px 0; }
+  .layout-container .field--type-text-with-summary img {
+    margin-top: 10px; }
+  .layout-container .field--type-image img {
+    margin-top: 10px; }
+
 /* Header regions
 -------------------------------------------------------------- */
-.content #logo-wrapper {
-  float: left; }
-  .content #logo-wrapper .logo img {
-    height: 50px;
-    width: auto; }
-.content #branding-wrapper {
-  float: left;
-  margin-top: 10px;
-  margin-left: 15px; }
-  .content #branding-wrapper .site-name {
-    margin: 0;
-    position: relative;
-    font-size: 40px;
-    letter-spacing: 2px; }
-    .content #branding-wrapper .site-name a:link, .content #branding-wrapper .site-name a:visited {
-      font-family: "gotham-light", sans-serif;
-      letter-spacing: 2px;
+#menu #nav {
+  margin-top: 20px; }
+  #menu #nav .menu {
+    content: '';
+    clear: both;
+    display: table; }
+    #menu #nav .menu a {
+      display: block;
+      position: relative;
+      padding: .75em 1em;
+      text-decoration: none;
       color: #fff;
-      text-decoration: none; }
-    .content #branding-wrapper .site-name a:hover {
-      color: #9C9C9C; }
-
-#header {
-  position: relative;
-  width: 950px;
-  margin: 30px auto 0 auto; }
-  #header .region-header {
-    float: left; }
-  #header #search-box {
-    float: right; }
-
-#menu {
-  width: 950px;
-  margin: 0 auto;
-  background: #393A3F;
-  /*background: -webkit-linear-gradient(#c4c4c4, gray);
-  background: -o-linear-gradient(#c4c4c4, gray);
-  background: -moz-linear-gradient(#c4c4c4, gray);
-  background: linear-gradient(#c4c4c4, gray);
-  -webkit-box-shadow: 1px 2px 3px -1px rgba(0,0,0,0.75);
-  -moz-box-shadow: 1px 2px 3px -1px rgba(0,0,0,0.75);
-  box-shadow: 1px 2px 3px -1px rgba(0,0,0,0.75);*/ }
-  #menu #nav {
-    margin-top: 20px; }
-    #menu #nav .menu {
-      content: '';
-      clear: both;
-      display: table; }
-      #menu #nav .menu * {
-        margin: 0;
-        padding: 0;
-        list-style: none; }
-      #menu #nav .menu a {
-        display: block;
-        position: relative;
-        padding: .75em 1em;
-        text-decoration: none;
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding-right: 30px;
+      padding-left: 30px;
+      padding-top: 12px; }
+      #menu #nav .menu a:visited {
         color: #fff;
+        text-decoration: none;
         font-size: 12px;
         font-weight: bold;
         text-transform: uppercase;
         padding-right: 30px;
         padding-left: 30px;
         padding-top: 12px; }
-        #menu #nav .menu a:visited {
-          color: #fff;
-          text-decoration: none;
-          font-size: 12px;
-          font-weight: bold;
-          text-transform: uppercase;
-          padding-right: 30px;
-          padding-left: 30px;
-          padding-top: 12px; }
-        #menu #nav .menu a:focus, #menu #nav .menu a:hover, #menu #nav .menu a:active {
+      #menu #nav .menu a:focus, #menu #nav .menu a:hover, #menu #nav .menu a:active {
+        outline: 0;
+        z-index: 10; }
+    #menu #nav .menu li {
+      float: left;
+      position: relative;
+      border-right: 1px solid white; }
+      #menu #nav .menu li:last-child {
+        border-right: none; }
+      #menu #nav .menu li a.is-active, #menu #nav .menu li a:hover {
+        color: gray;
+        background: white; }
+      #menu #nav .menu li li {
+        background: #3b6999;
+        border-right: none; }
+        #menu #nav .menu li li:hover, #menu #nav .menu li li.sfHover {
           outline: 0;
           z-index: 10; }
-      #menu #nav .menu li {
-        float: left;
-        position: relative;
-        border-right: 1px solid white; }
-        #menu #nav .menu li:last-child {
-          border-right: none; }
-        #menu #nav .menu li a.is-active, #menu #nav .menu li a:hover {
-          color: gray;
-          background: white; }
-        #menu #nav .menu li li {
+        #menu #nav .menu li li li {
           background: #3b6999;
-          border-right: none; }
-          #menu #nav .menu li li:hover, #menu #nav .menu li li.sfHover {
-            outline: 0;
-            z-index: 10; }
-          #menu #nav .menu li li li {
-            background: #3b6999;
-            top: 0; }
-            #menu #nav .menu li li li:hover, #menu #nav .menu li li li li:hover {
+          top: 0; }
+          #menu #nav .menu li li li:hover, #menu #nav .menu li li li li:hover {
+            background: #3b6999; }
+            #menu #nav .menu li li li:hover:first-child a:hover, #menu #nav .menu li li li:hover a:hover, #menu #nav .menu li li li li:hover:first-child a:hover, #menu #nav .menu li li li li:hover a:hover {
               background: #3b6999; }
-              #menu #nav .menu li li li:hover:first-child a:hover, #menu #nav .menu li li li:hover a:hover, #menu #nav .menu li li li li:hover:first-child a:hover, #menu #nav .menu li li li li:hover a:hover {
-                background: #3b6999; }
-              #menu #nav .menu li li li:hover:first-child a.is-active, #menu #nav .menu li li li:hover a.is-active, #menu #nav .menu li li li li:hover:first-child a.is-active, #menu #nav .menu li li li li:hover a.is-active {
-                background: #3b6999; }
-              #menu #nav .menu li li li:hover:first-child a.is-active, #menu #nav .menu li li li li:hover:first-child a.is-active {
-                background: white; }
-          #menu #nav .menu li li.active-trail {
+            #menu #nav .menu li li li:hover:first-child a.is-active, #menu #nav .menu li li li:hover a.is-active, #menu #nav .menu li li li li:hover:first-child a.is-active, #menu #nav .menu li li li li:hover a.is-active {
+              background: #3b6999; }
+            #menu #nav .menu li li li:hover:first-child a.is-active, #menu #nav .menu li li li li:hover:first-child a.is-active {
+              background: white; }
+        #menu #nav .menu li li.active-trail {
+          background: white; }
+          #menu #nav .menu li li.active-trail:first-child {
             background: white; }
-            #menu #nav .menu li li.active-trail:first-child {
-              background: white; }
-            #menu #nav .menu li li.active-trail li {
-              background: #3b6999; }
-            #menu #nav .menu li li.active-trail a.is-active {
-              background: white;
-              /* For browsers that do not support gradients */
-              /* background: -webkit-linear-gradient(#142f50, #26507d); !* For Safari 5.1 to 6.0 *!
-               background: -o-linear-gradient(#142f50, #26507d); !* For Opera 11.1 to 12.0 *!
-               background: -moz-linear-gradient(#142f50, #26507d); !* For Firefox 3.6 to 15 *!
-               background: linear-gradient(#142f50, #26507d); !* Standard syntax *!*/ }
-            #menu #nav .menu li li.active-trail:first-child a.is-active {
-              background: white; }
           #menu #nav .menu li li.active-trail li {
             background: #3b6999; }
-            #menu #nav .menu li li.active-trail li a.is-active {
-              background: #3b6999; }
-          #menu #nav .menu li li li.active-trail:first-child {
+          #menu #nav .menu li li.active-trail a.is-active {
+            background: white;
+            /* For browsers that do not support gradients */
+            /* background: -webkit-linear-gradient(#142f50, #26507d); !* For Safari 5.1 to 6.0 *!
+             background: -o-linear-gradient(#142f50, #26507d); !* For Opera 11.1 to 12.0 *!
+             background: -moz-linear-gradient(#142f50, #26507d); !* For Firefox 3.6 to 15 *!
+             background: linear-gradient(#142f50, #26507d); !* Standard syntax *!*/ }
+          #menu #nav .menu li li.active-trail:first-child a.is-active {
+            background: white; }
+        #menu #nav .menu li li.active-trail li {
+          background: #3b6999; }
+          #menu #nav .menu li li.active-trail li a.is-active {
             background: #3b6999; }
-          #menu #nav .menu li li li.active-trail:first-child a.is-active {
-            background: #3b6999; }
-      #menu #nav .menu ul {
-        position: absolute;
-        top: -999em;
-        width: 12em;
-        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
-        min-width: 12em;
-        /* allow long menu items to determine submenu width */
-        *width: 12em;
-        /* no auto sub width for IE7, see white-space comment below */ }
-    #menu #nav h2 {
-      height: 0;
-      overflow: hidden;
-      position: absolute; }
-    #menu #nav ul.menu li:hover li ul, #menu #nav ul.menu li.sfHover li ul {
-      top: -999em; }
-    #menu #nav ul.menu li li:hover ul, #menu #nav ul.menu li li.sfHover ul {
-      left: 12em;
-      top: 0; }
-    #menu #nav ul.menu li li:hover li ul, #menu #nav ul.menu li li.sfHover li ul {
-      top: -999em; }
-    #menu #nav ul.menu li li li:hover ul, #menu #nav ul.menu li li li.sfHover ul {
-      left: 12em;
-      top: 0; }
-    #menu #nav .contextual-links-region {
-      float: left;
-      z-index: 6; }
+        #menu #nav .menu li li li.active-trail:first-child {
+          background: #3b6999; }
+        #menu #nav .menu li li li.active-trail:first-child a.is-active {
+          background: #3b6999; }
+    #menu #nav .menu ul {
+      position: absolute;
+      top: -999em;
+      width: 12em;
+      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+      min-width: 12em;
+      /* allow long menu items to determine submenu width */
+      *width: 12em;
+      /* no auto sub width for IE7, see white-space comment below */ }
+  #menu #nav h2 {
+    height: 0;
+    overflow: hidden;
+    position: absolute; }
+  #menu #nav ul.menu li:hover li ul, #menu #nav ul.menu li.sfHover li ul {
+    top: -999em; }
+  #menu #nav ul.menu li li:hover ul, #menu #nav ul.menu li li.sfHover ul {
+    left: 12em;
+    top: 0; }
+  #menu #nav ul.menu li li:hover li ul, #menu #nav ul.menu li li.sfHover li ul {
+    top: -999em; }
+  #menu #nav ul.menu li li li:hover ul, #menu #nav ul.menu li li li.sfHover ul {
+    left: 12em;
+    top: 0; }
+  #menu #nav .contextual-links-region {
+    float: left;
+    z-index: 6; }
 
 #wrapper .content .breadcrumb {
   background: #fff;
@@ -1589,7 +1649,7 @@ ol.task-list {
     ol.task-list li.active {
       margin-right: 1em; }
 
-fieldset ul.clearfix li, fieldset .events-calendar-form ul.date-input li, .events-calendar-form fieldset ul.date-input li, fieldset .events-calendar-form ul.date-submit li, .events-calendar-form fieldset ul.date-submit li, fieldset ul.wrapper li, fieldset .social-share ul li, .social-share fieldset ul li, fieldset ul.weather li, fieldset ul.content li, fieldset #header ul#header-wrapper li, #header fieldset ul#header-wrapper li {
+fieldset ul.clearfix li, fieldset .events-calendar-form ul.date-input li, .events-calendar-form fieldset ul.date-input li, fieldset .events-calendar-form ul.date-submit li, .events-calendar-form fieldset ul.date-submit li, fieldset ul.wrapper li, fieldset .social-share ul li, .social-share fieldset ul li, fieldset ul.weather li, fieldset .block-local-tasks-block nav.tabs ul li, .block-local-tasks-block nav.tabs fieldset ul li, fieldset ul.region li, fieldset ul.layout-container li {
   margin: 0;
   padding: 0;
   background-image: none; }

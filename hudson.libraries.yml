@@ -4,7 +4,8 @@ global:
     theme:
       css/base.css: {}
   js:
+     js/main.js: {}
 #    js/jquery.cycle.lite.js: {}
 #    js/superfish.js: {}
-#  dependencies:
-#    - core/jquery
+  dependencies:
+    - core/jquery

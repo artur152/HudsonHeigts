@@ -4,41 +4,73 @@
 -------------------------------------------------------------- */
 
 body {
-  background: url(../images/body-bg.png) repeat-x #fff;
-  font-size: 80%;
+  background: $gray-light;
+  font-size: 100%;
   font-family: Arial, Helvetica, sans-serif;
-  color: #000;
   margin: 0;
   padding: 0;
+  color: $black;
   line-height: 1.5em;
 }
 
-.links{
-  ul{
-    li{
-      a{
-        color: $black!important;
+/* Admin regions
+-------------------------------------------------------------- */
+.block-local-tasks-block{
+  nav.tabs{
+    ul{
+      @extend .clearfix;
+      margin-bottom: 10px;
+      li{
+        float: left;
+        margin-right: 10px;
+        @extend .transition;
+        a{
+          font-family: $font-book;
+          background: $white;
+          padding: 5px;
+          margin: 0;
+          &:hover{
+            background: $gray-light;
+            color: $white;
+          }
+          &.is-active{
+            background: $gray;
+            color: $white;
+          }
+        }
       }
+    }
+  }
+  nav.breadcrumb{
+    a{
+      font-family: $font-book;
     }
   }
 }
 
+
 /* Content regions
 -------------------------------------------------------------- */
-
-#wrapper {
-  width: 950px;
-  margin: 15px auto 0;
+.region{
+  @extend .clearfix;
+  .profile{
+    display: none;
+  }
 }
 
-#content {
-  width: 100%;
-  float: left;
+.block-system-powered-by-block{
+  display: inline-block;
+  text-align: center;
+  width:100%;
+  margin: 10px 0 0 0;
+  font-size: 12px;
+  a{
+    color: $gray-light;
+  }
 }
 
-/* Text elements
--------------------------------------------------------------- */
-
+  /* Text elements
+  -------------------------------------------------------------- */
 tr {
   &.odd td, &.even td {
     padding: 0.5em;
@@ -72,86 +104,138 @@ code, tt, pre {
 }
 
 
+/* Content regions
+-------------------------------------------------------------- */
+.layout-container{
+    @include wrapper;
+    padding: 20px;
+    background: url("../images/body-bg.png") repeat-x $white;
+
+    .block-system-branding-block{
+      float: left;
+      .site-logo{
+        display: inline-block;
+        vertical-align: top;
+        img{
+          max-width: 50px;
+          height: auto;
+          display: block;
+        }
+      }
+      .site-name {
+        display: inline-block;
+        position: relative;
+        margin: 15px 0 0 0;
+        color: $white;
+        text-decoration: none;
+        font-family: $font-light;
+        font-size: 40px;
+        line-height: 44px;
+        letter-spacing: 2px;
+        a {
+          @extend .transition;
+          &:focus, &:link, &:visited{
+            color: inherit;
+          }
+          &:hover {
+            color: $gray-light;
+          }
+        }
+      }
+    }
+    .block-search{
+      float: right;
+      margin: 15px 0 0 0;
+      form{
+        @extend .clearfix;
+      }
+    }
+    nav.navigation{
+      display: inline-block;
+      width: 100%;
+      margin: 30px 0;
+      ul.menu{
+        display: table;
+        width: 100%;
+        background: -webkit-linear-gradient(#c4c4c4, gray);
+        background: -o-linear-gradient(#c4c4c4, gray);
+        background: -moz-linear-gradient(#c4c4c4, gray);
+        background: linear-gradient(#c4c4c4, gray);
+        -webkit-box-shadow: 1px 2px 3px -1px rgba(0,0,0,0.75);
+        -moz-box-shadow: 1px 2px 3px -1px rgba(0,0,0,0.75);
+        box-shadow: 1px 2px 3px -1px rgba(0,0,0,0.75);
+        li{
+          display: table-cell;
+          text-align: center;
+          padding: 0;
+          a{
+            font-family: $font-bold;
+            color: $white;
+            text-transform: uppercase;
+            padding: 15px 0;
+            display: block;
+            @extend .transition;
+            &:hover {
+              color: gray;
+              background: white;
+            }
+            &.is-active, a:hover {
+              color: gray;
+              background: white;
+            }
+
+          }
+        }
+      }
+    }
+
+    header, main, footer{
+      @extend .clearfix;
+    }
+
+    main{
+      a{
+        color: $gray-light;
+      }
+    }
+    footer{
+      nav.navigation.menu--footer{
+        margin-top: 10px;
+        margin-bottom: 0;
+        ul.menu{
+          li{
+            a{
+              font-family: $font-book;
+              font-size: 12px;
+              padding: 5px 0;
+            }
+          }
+        }
+      }
+    }
+  .field--type-text-with-summary{
+    img{
+      margin-top: 10px;
+    }
+  }
+  .field--type-image{
+    img{
+      margin-top: 10px;
+    }
+  }
+}
+
+
 /* Header regions
 -------------------------------------------------------------- */
 
-.content{
-  @extend .clearfix;
-  #logo-wrapper {
-    float: left;
-    .logo {
-      img {
-        height: 50px;
-        width:auto;
-      }
-    }
-  }
-  #branding-wrapper {
-    float: left;
-    margin-top: 10px;
-    margin-left: 15px;
-    .site-name {
-      margin: 0;
-      position: relative;
-      font-size: 40px;
-      letter-spacing: 2px;
-      a {
-        @extend .transition;
-        &:link, &:visited {
-          font-family: $font-light;
-          letter-spacing: 2px;
-          color: $white;
-          text-decoration: none;
-        }
-        &:hover {
-          color: $gray-light;
-        }
-      }
-    }
-  }
-}
-
-#header {
-  position: relative;
-  width: 950px;
-  margin: 30px auto 0 auto;
-  #header-wrapper{
-    @extend .clearfix;
-  }
-  .region-header{
-    float: left;
-  }
-  #search-box{
-    float: right;
-  }
-  nav.contextual-region {
-    //display: none;
-  }
-}
-
 #menu {
-  width: 950px;
-  margin: 0 auto;
-  background: $gray;
-  /*background: -webkit-linear-gradient(#c4c4c4, gray);
-  background: -o-linear-gradient(#c4c4c4, gray);
-  background: -moz-linear-gradient(#c4c4c4, gray);
-  background: linear-gradient(#c4c4c4, gray);
-  -webkit-box-shadow: 1px 2px 3px -1px rgba(0,0,0,0.75);
-  -moz-box-shadow: 1px 2px 3px -1px rgba(0,0,0,0.75);
-  box-shadow: 1px 2px 3px -1px rgba(0,0,0,0.75);*/
-
   #nav {
     margin-top: 20px;
     .menu {
       content: '';
       clear: both;
       display: table;
-      * {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
       a {
         display: block;
         position: relative;
