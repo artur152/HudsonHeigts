@@ -1,0 +1,10 @@
+global:
+  version: 1.x
+  css:
+    theme:
+      css/base.css: {}
+  js:
+#    js/jquery.cycle.lite.js: {}
+#    js/superfish.js: {}
+#  dependencies:
+#    - core/jquery
