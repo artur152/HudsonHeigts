@@ -768,7 +768,7 @@ form.email input[type='submit'] {
 /* Body
 -------------------------------------------------------------- */
 body {
-  background: #9C9C9C;
+  background: url("../images/body-bg.png") repeat-x #fff;
   font-size: 100%;
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
@@ -843,8 +843,7 @@ code, tt, pre {
 .layout-container {
   max-width: 992px;
   margin: 0 auto;
-  padding: 15px;
-  background: url("../images/body-bg.png") repeat-x #fff; }
+  padding: 15px 15px 0 15px; }
   .layout-container .block-system-branding-block {
     float: left; }
     .layout-container .block-system-branding-block .site-logo {

@@ -4,7 +4,7 @@
 -------------------------------------------------------------- */
 
 body {
-  background: $gray-light;
+  background: url("../images/body-bg.png") repeat-x $white;
   font-size: 100%;
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
@@ -109,8 +109,7 @@ code, tt, pre {
 -------------------------------------------------------------- */
 .layout-container{
     @include wrapper;
-    padding: 15px;
-    background: url("../images/body-bg.png") repeat-x $white;
+    padding: 15px 15px 0 15px;
 
     .block-system-branding-block{
       float: left;
