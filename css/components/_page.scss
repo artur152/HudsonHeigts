@@ -69,8 +69,9 @@ body {
   }
 }
 
-  /* Text elements
-  -------------------------------------------------------------- */
+
+/* Text elements
+-------------------------------------------------------------- */
 tr {
   &.odd td, &.even td {
     padding: 0.5em;
@@ -108,7 +109,7 @@ code, tt, pre {
 -------------------------------------------------------------- */
 .layout-container{
     @include wrapper;
-    padding: 20px;
+    padding: 15px;
     background: url("../images/body-bg.png") repeat-x $white;
 
     .block-system-branding-block{
@@ -134,15 +135,54 @@ code, tt, pre {
         letter-spacing: 2px;
         a {
           @extend .transition;
-          &:focus, &:link, &:visited{
-            color: inherit;
-          }
+          color: inherit;
           &:hover {
             color: $gray-light;
           }
         }
       }
     }
+
+    header, main, footer{
+      @extend .clearfix;
+    }
+
+    main{
+      a{
+        color: $gray-light;
+      }
+    }
+
+    footer{
+      .block-system-branding-block{
+        .site-name{
+          a{
+            color: $gray;
+          }
+        }
+      }
+      .search-block-form{
+        form{
+          input[type="search"]{
+            background: $gray;
+          }
+        }
+      }
+      nav.navigation.menu--footer{
+        margin-top: 10px;
+        margin-bottom: 0;
+        ul.menu{
+          li{
+            a{
+              font-family: $font-book;
+              font-size: 12px;
+              padding: 5px 0;
+            }
+          }
+        }
+      }
+    }
+
     .block-search{
       float: right;
       margin: 15px 0 0 0;
@@ -157,10 +197,11 @@ code, tt, pre {
       ul.menu{
         display: table;
         width: 100%;
-        background: -webkit-linear-gradient(#c4c4c4, gray);
+        background: $gray;
+       /* background: -webkit-linear-gradient(#c4c4c4, gray);
         background: -o-linear-gradient(#c4c4c4, gray);
         background: -moz-linear-gradient(#c4c4c4, gray);
-        background: linear-gradient(#c4c4c4, gray);
+        background: linear-gradient(#c4c4c4, gray);*/
         -webkit-box-shadow: 1px 2px 3px -1px rgba(0,0,0,0.75);
         -moz-box-shadow: 1px 2px 3px -1px rgba(0,0,0,0.75);
         box-shadow: 1px 2px 3px -1px rgba(0,0,0,0.75);
@@ -188,41 +229,16 @@ code, tt, pre {
         }
       }
     }
-
-    header, main, footer{
-      @extend .clearfix;
-    }
-
-    main{
-      a{
-        color: $gray-light;
-      }
-    }
-    footer{
-      nav.navigation.menu--footer{
+    .field--type-text-with-summary{
+      img{
         margin-top: 10px;
-        margin-bottom: 0;
-        ul.menu{
-          li{
-            a{
-              font-family: $font-book;
-              font-size: 12px;
-              padding: 5px 0;
-            }
-          }
-        }
       }
     }
-  .field--type-text-with-summary{
-    img{
-      margin-top: 10px;
+    .field--type-image{
+      img{
+        margin-top: 10px;
+      }
     }
-  }
-  .field--type-image{
-    img{
-      margin-top: 10px;
-    }
-  }
 }
 
 

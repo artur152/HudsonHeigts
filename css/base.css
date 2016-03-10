@@ -87,6 +87,12 @@ h4 {
   float: left;
   margin: 0; }
 
+form.email input[type='text'] {
+  vertical-align: top; }
+form.email input[type='submit'] {
+  margin-left: 5px;
+  vertical-align: top; }
+
 .header-search {
   position: relative;
   z-index: 1;
@@ -156,6 +162,8 @@ h4 {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   transition: all .5s ease 0s; }
+  .primary-input:hover, .search-block-form .form-search:hover, form.email input[type='text']:hover {
+    opacity: 0.8; }
   .primary-input::-webkit-input-placeholder, .search-block-form .form-search::-webkit-input-placeholder, form.email input[type='text']::-webkit-input-placeholder {
     color: #9C9C9C; }
   .primary-input::-moz-placeholder, .search-block-form .form-search::-moz-placeholder, form.email input[type='text']::-moz-placeholder {
@@ -277,7 +285,7 @@ h4 {
   .events-calendar-form .date-submit input:first-child {
     margin-left: 0; }
 
-.clearfix:after, .events-calendar-form .date-input:after, .events-calendar-form .date-submit:after, .wrapper:after, .social-share ul:after, .weather:after, .block-local-tasks-block nav.tabs ul:after, .region:after, .layout-container:after, .layout-container .block-search form:after, .layout-container header:after, .layout-container main:after, .layout-container footer:after {
+.clearfix:after, .events-calendar-form .date-input:after, .events-calendar-form .date-submit:after, .wrapper:after, .social-share ul:after, .weather:after, .block-local-tasks-block nav.tabs ul:after, .region:after, .layout-container:after, .layout-container header:after, .layout-container main:after, .layout-container footer:after, .layout-container .block-search form:after {
   content: "";
   clear: both;
   display: table; }
@@ -290,7 +298,7 @@ h4 {
   max-width: 900px;
   margin: 0 auto; }
 
-.transition, .secondary-button:hover, form.email input[type='submit']:hover, .social-share ul li a:hover, .ui-datepicker .ui-datepicker-header a.ui-corner-all:hover, .ui-datepicker .ui-datepicker-header a.ui-corner-all:hover:after, .block-local-tasks-block nav.tabs ul li, .layout-container .block-system-branding-block .site-name a, .layout-container nav.navigation ul.menu li a, #menu #nav .menu a {
+.transition, .primary-input, .search-block-form .form-search, form.email input[type='text'], .secondary-button:hover, form.email input[type='submit']:hover, .social-share ul li a:hover, .ui-datepicker .ui-datepicker-header a.ui-corner-all:hover, .ui-datepicker .ui-datepicker-header a.ui-corner-all:hover:after, .block-local-tasks-block nav.tabs ul li, .layout-container .block-system-branding-block .site-name a, .layout-container nav.navigation ul.menu li a, #menu #nav .menu a {
   transition: all .2s ease 0s; }
 
 .play-button:before, .weather .views .cams .item .camera a:before {
@@ -754,12 +762,6 @@ h4 {
     }
   }
 }*/
-form.email input[type='text'] {
-  vertical-align: top; }
-form.email input[type='submit'] {
-  margin-left: 5px;
-  vertical-align: top; }
-
 /*____________________ Colors _________________*/
 /*____________________ Fonts _________________*/
 /*____________________ Wrapper  _________________*/
@@ -841,7 +843,7 @@ code, tt, pre {
 .layout-container {
   max-width: 992px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 15px;
   background: url("../images/body-bg.png") repeat-x #fff; }
   .layout-container .block-system-branding-block {
     float: left; }
@@ -862,10 +864,23 @@ code, tt, pre {
       font-size: 40px;
       line-height: 44px;
       letter-spacing: 2px; }
-      .layout-container .block-system-branding-block .site-name a:focus, .layout-container .block-system-branding-block .site-name a:link, .layout-container .block-system-branding-block .site-name a:visited {
+      .layout-container .block-system-branding-block .site-name a {
         color: inherit; }
-      .layout-container .block-system-branding-block .site-name a:hover {
-        color: #9C9C9C; }
+        .layout-container .block-system-branding-block .site-name a:hover {
+          color: #9C9C9C; }
+  .layout-container main a {
+    color: #9C9C9C; }
+  .layout-container footer .block-system-branding-block .site-name a {
+    color: #393A3F; }
+  .layout-container footer .search-block-form form input[type="search"] {
+    background: #393A3F; }
+  .layout-container footer nav.navigation.menu--footer {
+    margin-top: 10px;
+    margin-bottom: 0; }
+    .layout-container footer nav.navigation.menu--footer ul.menu li a {
+      font-family: "gotham-book", sans-serif;
+      font-size: 12px;
+      padding: 5px 0; }
   .layout-container .block-search {
     float: right;
     margin: 15px 0 0 0; }
@@ -876,10 +891,11 @@ code, tt, pre {
     .layout-container nav.navigation ul.menu {
       display: table;
       width: 100%;
-      background: -webkit-linear-gradient(#c4c4c4, gray);
-      background: -o-linear-gradient(#c4c4c4, gray);
-      background: -moz-linear-gradient(#c4c4c4, gray);
-      background: linear-gradient(#c4c4c4, gray);
+      background: #393A3F;
+      /* background: -webkit-linear-gradient(#c4c4c4, gray);
+       background: -o-linear-gradient(#c4c4c4, gray);
+       background: -moz-linear-gradient(#c4c4c4, gray);
+       background: linear-gradient(#c4c4c4, gray);*/
       -webkit-box-shadow: 1px 2px 3px -1px rgba(0, 0, 0, 0.75);
       -moz-box-shadow: 1px 2px 3px -1px rgba(0, 0, 0, 0.75);
       box-shadow: 1px 2px 3px -1px rgba(0, 0, 0, 0.75); }
@@ -899,15 +915,6 @@ code, tt, pre {
           .layout-container nav.navigation ul.menu li a.is-active, .layout-container nav.navigation ul.menu li a a:hover {
             color: gray;
             background: white; }
-  .layout-container main a {
-    color: #9C9C9C; }
-  .layout-container footer nav.navigation.menu--footer {
-    margin-top: 10px;
-    margin-bottom: 0; }
-    .layout-container footer nav.navigation.menu--footer ul.menu li a {
-      font-family: "gotham-book", sans-serif;
-      font-size: 12px;
-      padding: 5px 0; }
   .layout-container .field--type-text-with-summary img {
     margin-top: 10px; }
   .layout-container .field--type-image img {

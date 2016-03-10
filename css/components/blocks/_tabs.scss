@@ -116,14 +116,3 @@
   }
 }*/
 
-form.email{
-  input[type='text']{
-    @extend .primary-input;
-    vertical-align: top;
-  }
-  input[type='submit']{
-    @extend .secondary-button;
-    margin-left: 5px;
-    vertical-align: top;
-  }
-}
