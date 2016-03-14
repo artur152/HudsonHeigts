@@ -8,7 +8,6 @@ body {
   margin: 0;
   padding: 0;
   color: $black;
-  line-height: 1.5em;
 }
 
 /* Logo
@@ -78,21 +77,24 @@ body {
 /* Navigation
 -------------------------------------------------------------- */
 nav.main-navigation{
-  width:100%;
+  @include wrapper;
   position: relative;
-  margin: 30px 0;
+  width:100%;
+  margin-top: 30px;
+  clear: both;
   ul.menu{
     @extend .clearfix;
     display: table;
     width: 100%;
-    -webkit-box-shadow: 1px 2px 3px -1px rgba(0,0,0,0.75);
-    -moz-box-shadow: 1px 2px 3px -1px rgba(0,0,0,0.75);
-    box-shadow: 1px 2px 3px -1px rgba(0,0,0,0.75);
+    //-webkit-box-shadow: 1px 2px 3px -1px rgba(0,0,0,0.75);
+    //-moz-box-shadow: 1px 2px 3px -1px rgba(0,0,0,0.75);
+    //box-shadow: 1px 2px 3px -1px rgba(0,0,0,0.75);
     li{
       display: table-cell;
       a{
         @extend .transition;
         font-family: $font-book;
+        line-height: 20px;
         background: $gray;
         color: $white;
         text-transform: uppercase;
@@ -113,19 +115,40 @@ nav.main-navigation{
   }
 }
 
-section.page{
+/* Page
+-------------------------------------------------------------- */
+header, main, footer{
   @include wrapper;
-  padding: 15px 15px 0 15px;
+  @extend .clearfix;
 }
 
-header, main, footer{
-  @extend .clearfix;
+.navigation{
+  background: $gray;
+  border-bottom: 10px solid $white;
+}
+
+.hero{
+  overflow: hidden;
+  background: $gray-light;
+  .field-content{
+    height: 500px;
+    position: relative;
+  }
+  img{
+    width: 100%;
+    height: auto;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    //transform: translate(-50%, -50%);
+  }
 }
 
 main.content{
   a{
     color: $gray;
   }
+
   article{
     @extend .clearfix;
     max-width: 900px;
@@ -155,6 +178,7 @@ main.content{
       }
     }
   }
+
   .subscribe{
     margin: 5px 0;
     a{
@@ -163,6 +187,7 @@ main.content{
   }
 
   ul.menu-local-tasks{
+    margin-top: 10px;
     border-bottom: 1px solid $gray-light;
     li{
       background: $gray;
@@ -215,6 +240,7 @@ main.content{
       color: $gray-light;
     }
   }
+
   .block-hudson-content{
     position: relative;
     padding-top: 20px;
@@ -235,6 +261,7 @@ footer{
       }
     }
   }
+
   .site-branding{
     .site-name{
       a{
@@ -261,7 +288,6 @@ footer{
       }
     }
   }
-
 }
 
 
