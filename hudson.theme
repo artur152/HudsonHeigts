@@ -5,6 +5,6 @@ function hudson_form_alter( &$form, &$form_state, $form_id ) {
         $form['keys']['#attributes']['placeholder'] = t( 'search' );
     }
     if ($form_id === 'search_block_form') {
-        $form['keys']['#attributes']['placeholder'] = t( 'wha ya looking for?' );
+        $form['keys']['#attributes']['placeholder'] = t( "wha ya'll looking for?" );
     }
 }

@@ -157,7 +157,7 @@ form.email input[type='submit'] {
   letter-spacing: 2px;
   background: #fff;
   padding: 15px;
-  width: 300px;
+  width: 330px;
   background-repeat: no-repeat;
   background-position: 50% 50%;
   border: none;
@@ -869,13 +869,13 @@ header, main, footer {
 
 .hero {
   overflow: hidden;
-  background: #9C9C9C; }
+  background: url("../images/slideshow-shadow.png") no-repeat center bottom;
+  padding-bottom: 110px; }
   .hero .field-content {
     height: 500px;
     position: relative; }
   .hero img {
     width: 100%;
-    height: auto;
     display: block;
     position: absolute;
     bottom: 0; }
